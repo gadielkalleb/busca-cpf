@@ -1,0 +1,24 @@
+<% include ../partials/head.ejs %>
+
+    <h1>Novo Cpf</h1>
+    <p><a href="/consultas">Voltar para a lista de pessoas</a></p>
+    <br>
+    <form class="container" method="post">
+        <div class="row justify-content-md-center">
+            <div class="form-group col-3">
+                <label for="numero">Numero</label>
+                <input type="text" class="form-control" id="numero" name="numero" placeholder="Digite o cpf">
+            </div>
+            <div class="form-group col-3">
+                <label for="tipo">Estado do cpf</label>
+                <select class="form-control" id="tipo" name="tipo">
+                    <option>Free</option>
+                    <option>Block</option>
+                </select>
+            </div>
+            <div class="w-100"></div>
+            <button id="btnSalvar" type="submit" class="btn btn-primary col-sm-1">Salvar</button>
+        </div>
+    </form>
+
+<% include ../partials/footer.ejs %>

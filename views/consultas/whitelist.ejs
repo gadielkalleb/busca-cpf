@@ -1,0 +1,33 @@
+<% include ../partials/head.ejs %>
+
+    <h1>Lista de cpf</h1>
+    <p>
+        <a href="/">Voltar para a home</a>
+    </p>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <tr>
+                        <th scope="col">Numero</th>
+                        <th scope="col">status</th>
+                        <th scope="col">ações</th>
+                    </tr>
+                    <% cpfs.map( cpf => { %>
+                        <tr>
+                            <td><%= cpf.numero %></td>
+                            <td><%= cpf.tipo %></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a type="button" class="btn btn-secondary" href="/consultas/update/<%= cpf.id %>">Editar</a>&nbsp;&nbsp;&nbsp;
+                                    <a type="button" class="btn btn-secondary" href="/consultas/delete/<%= cpf.id %>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer.ejs %>
